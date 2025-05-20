@@ -25,6 +25,10 @@
 		2BD7BDCF2DDC967000A9F021 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */; };
 		2BD7BDD12DDC967E00A9F021 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */; };
 		2BD7BDD42DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDD22DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld */; };
+		2BD7BDE02DDD08B000A9F021 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDDF2DDD08B000A9F021 /* String+Extension.swift */; };
+		2BD7BDE22DDD0E5200A9F021 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */; };
+		2BD7BDE42DDD19B700A9F021 /* ShimmerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */; };
+		2BD7BDE62DDD19EC00A9F021 /* ArticleCardSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE52DDD19EC00A9F021 /* ArticleCardSkeletonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
 		2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		2BD7BDD32DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArticlesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		2BD7BDDF2DDD08B000A9F021 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerViewModifier.swift; sourceTree = "<group>"; };
+		2BD7BDE52DDD19EC00A9F021 /* ArticleCardSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardSkeletonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 				2BD7BDAE2DDC6A5700A9F021 /* Domain */,
 				2BD7BDAF2DDC6A6100A9F021 /* Data */,
 				2BD7BDB02DDC6B6800A9F021 /* Resources */,
+				2BD7BDDE2DDD089B00A9F021 /* Utilities */,
 				2BD7BDD92DDCB12F00A9F021 /* CoreData */,
 				2BD7BD882DDC649400A9F021 /* Preview Content */,
 			);
@@ -252,6 +261,7 @@
 				2BD7BDB92DDC752500A9F021 /* ArticleListView.swift */,
 				2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */,
 				2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */,
+				2BD7BDE52DDD19EC00A9F021 /* ArticleCardSkeletonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +288,16 @@
 				2BD7BDD22DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2BD7BDDE2DDD089B00A9F021 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDDF2DDD08B000A9F021 /* String+Extension.swift */,
+				2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */,
+				2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,14 +430,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD7BDE22DDD0E5200A9F021 /* HTMLView.swift in Sources */,
 				2BD7BDD12DDC967E00A9F021 /* ArticleDetailView.swift in Sources */,
 				2BD7BDC22DDC817E00A9F021 /* ArticlesRepository.swift in Sources */,
+				2BD7BDE42DDD19B700A9F021 /* ShimmerViewModifier.swift in Sources */,
 				2BD7BDBE2DDC803100A9F021 /* Article.swift in Sources */,
 				2BD7BDC62DDC82D500A9F021 /* PersisenceController.swift in Sources */,
+				2BD7BDE62DDD19EC00A9F021 /* ArticleCardSkeletonView.swift in Sources */,
 				2BD7BDC42DDC823300A9F021 /* ArticleCoreDataService.swift in Sources */,
 				2BD7BDCF2DDC967000A9F021 /* ArticleCardView.swift in Sources */,
 				2BD7BDC02DDC815300A9F021 /* FetchArticlesUseCase.swift in Sources */,
 				2BD7BDBA2DDC752500A9F021 /* ArticleListView.swift in Sources */,
+				2BD7BDE02DDD08B000A9F021 /* String+Extension.swift in Sources */,
 				2BD7BDD42DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld in Sources */,
 				2BD7BDCB2DDC859500A9F021 /* ArticlesRepositoryImpl.swift in Sources */,
 				2BD7BDBC2DDC79A600A9F021 /* ArticleListViewModel.swift in Sources */,

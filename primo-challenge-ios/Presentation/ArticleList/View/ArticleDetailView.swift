@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     let article: Article
+    @State private var webViewHeight: CGFloat = 0
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(article.title)
-                    .font(.title)
-                Text(article.content)
-            }
-            .padding()
+            HTMLView(htmlContent: article.content, contentHeight: $webViewHeight)
+                .frame(height: webViewHeight)
+                .padding()
+            
         }
+        .navigationTitle(article.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-//#Preview {
-//    ArticleDetailView()
-//}
+#Preview {
+    ArticleDetailView(article: .preview)
+}
+

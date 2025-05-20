@@ -17,3 +17,15 @@ struct Article: Identifiable {
     let imageUrls: [String]
 }
 
+extension Article {
+    static let preview = Article(
+        id: "preview-id",
+        title: "Preview Article Title",
+        description: "Short summary for preview.",
+        content: "Full content here.",
+        publishedDate: Date(),
+        categories: ["Swift", "iOS"],
+        imageUrls: ["https://cdn-images-1.medium.com/max/1024/1*oC2AS8oWM7kT4OOdpqNUBw.jpeg", "https://cdn-images-1.medium.com/max/759/1*4lrRo_Li6DoNM484baR9sw.jpeg"]
+    )
+}
+
