@@ -11,7 +11,7 @@ import SwiftUI
 struct primo_challenge_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleListView()
         }
     }
 }

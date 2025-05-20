@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23A5257q" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="CDArticle" representedClassName="CDArticle" syncable="YES" codeGenerationType="class">
+    <entity name="ArticleEntity" representedClassName="ArticleEntity" syncable="YES" codeGenerationType="class">
         <attribute name="articleDescription" optional="YES" attributeType="String"/>
         <attribute name="categories" optional="YES" attributeType="Transformable"/>
         <attribute name="content" optional="YES" attributeType="String"/>

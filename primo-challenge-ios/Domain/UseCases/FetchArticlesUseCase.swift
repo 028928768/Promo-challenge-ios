@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+protocol FetchArticlesUseCase {
+    func execute() async -> [Article]
+}
+
+final class FetchArticlesUseCaseImpl: FetchArticlesUseCase {
+    private let repository: ArticlesRepository
+    
+    init(repository: ArticlesRepository) {
+        self.repository = repository
+    }
+    
+    func execute() async -> [Article] {
+        // fetch articles from repository
+        await repository.fetchArticles()
+    }
+}

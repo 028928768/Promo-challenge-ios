@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct ArticleCardView: View {
+    let article: Article
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 8) {
+            Text(article.title)
+                .font(.headline)
+            Text(article.description)
+                .font(.subheadline)
+                .lineLimit(2)
+        }
+        .padding()
     }
 }
 
-#Preview {
-    ArticleCardView()
-}
+//#Preview {
+//    // TODO: Mockup Article data
+//   // ArticleCardView(article: )
+//}

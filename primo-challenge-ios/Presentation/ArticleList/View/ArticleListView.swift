@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct ArticleListView: View {
+    @StateObject private var viewModel = ArticleListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                //: Header
+                HStack {
+                    Text("PRIMO")
+                }
+                List(viewModel.articles) { article in
+                    ArticleCardView(article: article)
+                        .onTapGesture {
+                            viewModel.select(article)
+                        }
+                }
+                .listStyle(.plain)
+            }
+        }
+        .onAppear {
+            viewModel.loadArticles()
+        }
+        .sheet(item: $viewModel.selectedArticle) { article in
+            ArticleDetailView(article: article)
+        }
     }
 }
 

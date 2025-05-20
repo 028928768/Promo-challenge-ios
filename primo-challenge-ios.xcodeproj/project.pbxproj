@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		2BD7BD832DDC649300A9F021 /* primo_challenge_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BD822DDC649300A9F021 /* primo_challenge_iosApp.swift */; };
-		2BD7BD852DDC649300A9F021 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BD842DDC649300A9F021 /* ContentView.swift */; };
 		2BD7BD872DDC649400A9F021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD7BD862DDC649400A9F021 /* Assets.xcassets */; };
 		2BD7BD8A2DDC649400A9F021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD7BD892DDC649400A9F021 /* Preview Assets.xcassets */; };
 		2BD7BD942DDC649500A9F021 /* primo_challenge_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BD932DDC649500A9F021 /* primo_challenge_iosTests.swift */; };
 		2BD7BD9E2DDC649500A9F021 /* primo_challenge_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BD9D2DDC649500A9F021 /* primo_challenge_iosUITests.swift */; };
 		2BD7BDA02DDC649500A9F021 /* primo_challenge_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BD9F2DDC649500A9F021 /* primo_challenge_iosUITestsLaunchTests.swift */; };
+		2BD7BDBA2DDC752500A9F021 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDB92DDC752500A9F021 /* ArticleListView.swift */; };
+		2BD7BDBC2DDC79A600A9F021 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDBB2DDC79A600A9F021 /* ArticleListViewModel.swift */; };
+		2BD7BDBE2DDC803100A9F021 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDBD2DDC803100A9F021 /* Article.swift */; };
+		2BD7BDC02DDC815300A9F021 /* FetchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDBF2DDC815300A9F021 /* FetchArticlesUseCase.swift */; };
+		2BD7BDC22DDC817E00A9F021 /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDC12DDC817E00A9F021 /* ArticlesRepository.swift */; };
+		2BD7BDC42DDC823300A9F021 /* ArticleCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDC32DDC823300A9F021 /* ArticleCoreDataService.swift */; };
+		2BD7BDC62DDC82D500A9F021 /* PersisenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDC52DDC82D500A9F021 /* PersisenceController.swift */; };
+		2BD7BDCB2DDC859500A9F021 /* ArticlesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDCA2DDC859500A9F021 /* ArticlesRepositoryImpl.swift */; };
+		2BD7BDCD2DDC85BD00A9F021 /* ArticleFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDCC2DDC85BD00A9F021 /* ArticleFeedService.swift */; };
+		2BD7BDCF2DDC967000A9F021 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */; };
+		2BD7BDD12DDC967E00A9F021 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */; };
+		2BD7BDD42DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDD22DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,6 @@
 /* Begin PBXFileReference section */
 		2BD7BD7F2DDC649300A9F021 /* primo-challenge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "primo-challenge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD7BD822DDC649300A9F021 /* primo_challenge_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primo_challenge_iosApp.swift; sourceTree = "<group>"; };
-		2BD7BD842DDC649300A9F021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BD7BD862DDC649400A9F021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BD7BD892DDC649400A9F021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BD7BD8F2DDC649500A9F021 /* primo-challenge-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "primo-challenge-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +54,18 @@
 		2BD7BD992DDC649500A9F021 /* primo-challenge-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "primo-challenge-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD7BD9D2DDC649500A9F021 /* primo_challenge_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primo_challenge_iosUITests.swift; sourceTree = "<group>"; };
 		2BD7BD9F2DDC649500A9F021 /* primo_challenge_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primo_challenge_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2BD7BDB92DDC752500A9F021 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		2BD7BDBB2DDC79A600A9F021 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
+		2BD7BDBD2DDC803100A9F021 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		2BD7BDBF2DDC815300A9F021 /* FetchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesUseCase.swift; sourceTree = "<group>"; };
+		2BD7BDC12DDC817E00A9F021 /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
+		2BD7BDC32DDC823300A9F021 /* ArticleCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCoreDataService.swift; sourceTree = "<group>"; };
+		2BD7BDC52DDC82D500A9F021 /* PersisenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersisenceController.swift; sourceTree = "<group>"; };
+		2BD7BDCA2DDC859500A9F021 /* ArticlesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepositoryImpl.swift; sourceTree = "<group>"; };
+		2BD7BDCC2DDC85BD00A9F021 /* ArticleFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFeedService.swift; sourceTree = "<group>"; };
+		2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		2BD7BDD32DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArticlesDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +116,12 @@
 		2BD7BD812DDC649300A9F021 /* primo-challenge-ios */ = {
 			isa = PBXGroup;
 			children = (
-				2BD7BD822DDC649300A9F021 /* primo_challenge_iosApp.swift */,
-				2BD7BD842DDC649300A9F021 /* ContentView.swift */,
-				2BD7BD862DDC649400A9F021 /* Assets.xcassets */,
+				2BD7BDAC2DDC6A3800A9F021 /* App */,
+				2BD7BDAD2DDC6A4400A9F021 /* Presentation */,
+				2BD7BDAE2DDC6A5700A9F021 /* Domain */,
+				2BD7BDAF2DDC6A6100A9F021 /* Data */,
+				2BD7BDB02DDC6B6800A9F021 /* Resources */,
+				2BD7BDD92DDCB12F00A9F021 /* CoreData */,
 				2BD7BD882DDC649400A9F021 /* Preview Content */,
 			);
 			path = "primo-challenge-ios";
@@ -125,6 +150,134 @@
 				2BD7BD9F2DDC649500A9F021 /* primo_challenge_iosUITestsLaunchTests.swift */,
 			);
 			path = "primo-challenge-iosUITests";
+			sourceTree = "<group>";
+		};
+		2BD7BDAC2DDC6A3800A9F021 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BD822DDC649300A9F021 /* primo_challenge_iosApp.swift */,
+				2BD7BDC52DDC82D500A9F021 /* PersisenceController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2BD7BDAD2DDC6A4400A9F021 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDB12DDC6BE500A9F021 /* ArticleList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2BD7BDAE2DDC6A5700A9F021 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDB22DDC6BF400A9F021 /* Entities */,
+				2BD7BDB32DDC6BFA00A9F021 /* UseCases */,
+				2BD7BDB42DDC6C0400A9F021 /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2BD7BDAF2DDC6A6100A9F021 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDB52DDC6C1F00A9F021 /* Remote */,
+				2BD7BDB62DDC6C2500A9F021 /* Local */,
+				2BD7BDC72DDC855300A9F021 /* RepositoryImpl */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2BD7BDB02DDC6B6800A9F021 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BD862DDC649400A9F021 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2BD7BDB12DDC6BE500A9F021 /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDB72DDC746C00A9F021 /* View */,
+				2BD7BDB82DDC747200A9F021 /* ViewModel */,
+			);
+			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		2BD7BDB22DDC6BF400A9F021 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDBD2DDC803100A9F021 /* Article.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2BD7BDB32DDC6BFA00A9F021 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDBF2DDC815300A9F021 /* FetchArticlesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2BD7BDB42DDC6C0400A9F021 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDC12DDC817E00A9F021 /* ArticlesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2BD7BDB52DDC6C1F00A9F021 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDCC2DDC85BD00A9F021 /* ArticleFeedService.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		2BD7BDB62DDC6C2500A9F021 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDC32DDC823300A9F021 /* ArticleCoreDataService.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		2BD7BDB72DDC746C00A9F021 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDB92DDC752500A9F021 /* ArticleListView.swift */,
+				2BD7BDCE2DDC967000A9F021 /* ArticleCardView.swift */,
+				2BD7BDD02DDC967E00A9F021 /* ArticleDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BD7BDB82DDC747200A9F021 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDBB2DDC79A600A9F021 /* ArticleListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BD7BDC72DDC855300A9F021 /* RepositoryImpl */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDCA2DDC859500A9F021 /* ArticlesRepositoryImpl.swift */,
+			);
+			path = RepositoryImpl;
+			sourceTree = "<group>";
+		};
+		2BD7BDD92DDCB12F00A9F021 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDD22DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +410,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD7BD852DDC649300A9F021 /* ContentView.swift in Sources */,
+				2BD7BDD12DDC967E00A9F021 /* ArticleDetailView.swift in Sources */,
+				2BD7BDC22DDC817E00A9F021 /* ArticlesRepository.swift in Sources */,
+				2BD7BDBE2DDC803100A9F021 /* Article.swift in Sources */,
+				2BD7BDC62DDC82D500A9F021 /* PersisenceController.swift in Sources */,
+				2BD7BDC42DDC823300A9F021 /* ArticleCoreDataService.swift in Sources */,
+				2BD7BDCF2DDC967000A9F021 /* ArticleCardView.swift in Sources */,
+				2BD7BDC02DDC815300A9F021 /* FetchArticlesUseCase.swift in Sources */,
+				2BD7BDBA2DDC752500A9F021 /* ArticleListView.swift in Sources */,
+				2BD7BDD42DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld in Sources */,
+				2BD7BDCB2DDC859500A9F021 /* ArticlesRepositoryImpl.swift in Sources */,
+				2BD7BDBC2DDC79A600A9F021 /* ArticleListViewModel.swift in Sources */,
+				2BD7BDCD2DDC85BD00A9F021 /* ArticleFeedService.swift in Sources */,
 				2BD7BD832DDC649300A9F021 /* primo_challenge_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +752,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2BD7BDD22DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2BD7BDD32DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodel */,
+			);
+			currentVersion = 2BD7BDD32DDCAA3400A9F021 /* ArticlesDataModel.xcdatamodel */;
+			path = ArticlesDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2BD7BD772DDC649300A9F021 /* Project object */;
 }
