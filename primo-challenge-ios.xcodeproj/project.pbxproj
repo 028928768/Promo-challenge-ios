@@ -29,6 +29,7 @@
 		2BD7BDE22DDD0E5200A9F021 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */; };
 		2BD7BDE42DDD19B700A9F021 /* ShimmerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */; };
 		2BD7BDE62DDD19EC00A9F021 /* ArticleCardSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE52DDD19EC00A9F021 /* ArticleCardSkeletonView.swift */; };
+		2BD7BDE82DDD77CB00A9F021 /* CapesuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDE72DDD77CB00A9F021 /* CapesuleButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
 		2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerViewModifier.swift; sourceTree = "<group>"; };
 		2BD7BDE52DDD19EC00A9F021 /* ArticleCardSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardSkeletonView.swift; sourceTree = "<group>"; };
+		2BD7BDE72DDD77CB00A9F021 /* CapesuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapesuleButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 				2BD7BDDF2DDD08B000A9F021 /* String+Extension.swift */,
 				2BD7BDE12DDD0E5200A9F021 /* HTMLView.swift */,
 				2BD7BDE32DDD19B700A9F021 /* ShimmerViewModifier.swift */,
+				2BD7BDE72DDD77CB00A9F021 /* CapesuleButtonStyle.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				2BD7BDE62DDD19EC00A9F021 /* ArticleCardSkeletonView.swift in Sources */,
 				2BD7BDC42DDC823300A9F021 /* ArticleCoreDataService.swift in Sources */,
 				2BD7BDCF2DDC967000A9F021 /* ArticleCardView.swift in Sources */,
+				2BD7BDE82DDD77CB00A9F021 /* CapesuleButtonStyle.swift in Sources */,
 				2BD7BDC02DDC815300A9F021 /* FetchArticlesUseCase.swift in Sources */,
 				2BD7BDBA2DDC752500A9F021 /* ArticleListView.swift in Sources */,
 				2BD7BDE02DDD08B000A9F021 /* String+Extension.swift in Sources */,

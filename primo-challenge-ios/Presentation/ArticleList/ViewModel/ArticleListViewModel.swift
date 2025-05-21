@@ -21,17 +21,17 @@ final class ArticleListViewModel: ObservableObject {
         Task {
             let result = await useCase.execute()
             DispatchQueue.main.async {
-                // Run on main thread
-                self.articles = result
-                self.state = .success(self.articles)
+                switch result {
+                case .success(let articles):
+                    self.articles = articles
+                    self.state = .success(self.articles)
+                case .failure(let error):
+                    self.state = .failed(error)
+                }
+                
             }
         }
     }
-    
-    func select(_ article: Article) {
-        selectedArticle = article
-    }
-   
 }
 
 enum ViewState<T> {

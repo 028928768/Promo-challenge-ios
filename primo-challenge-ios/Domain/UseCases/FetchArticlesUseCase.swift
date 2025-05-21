@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FetchArticlesUseCase {
-    func execute() async -> [Article]
+    func execute() async -> Result<[Article], Error>
 }
 
 final class FetchArticlesUseCaseImpl: FetchArticlesUseCase {
@@ -18,8 +18,13 @@ final class FetchArticlesUseCaseImpl: FetchArticlesUseCase {
         self.repository = repository
     }
     
-    func execute() async -> [Article] {
-        // fetch articles from repository
-        await repository.fetchArticles()
+    func execute() async -> Result<[Article], Error> {
+        do {
+            let articles = try await repository.fetchArticles()
+            return .success(articles)
+        } catch {
+            return .failure(error)
+        }
+
     }
 }

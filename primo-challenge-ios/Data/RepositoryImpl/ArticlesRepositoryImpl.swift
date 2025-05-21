@@ -17,16 +17,15 @@ final class ArticlesRepositoryImpl: ArticlesRepository {
         self.local = local
     }
 
-    func fetchArticles() async -> [Article] {
-        do {
-            let localArticles = try await local.loadArticles()
+    func fetchArticles() async throws -> [Article] {
+        let localArticles = try await local.loadArticles()
             
             // check for existing data
             if !localArticles.isEmpty {
                 // Return local first, then refresh in background
                 Task {
                     do {
-                        let fetched = await remote.fetchArticles()
+                        let fetched = try await remote.fetchArticles()
                         try await local.saveArticles(fetched)
                     } catch {
                         print("Failed to save fetched articles: \(error)")
@@ -34,17 +33,11 @@ final class ArticlesRepositoryImpl: ArticlesRepository {
                 } // Task
                 return localArticles
             } else {
-                let fetched = await remote.fetchArticles()
-                do {
-                    try await local.saveArticles(fetched)
-                } catch {
-                    print("Failed to save new articles: \(error)")
-                }
+                let fetched = try await remote.fetchArticles()
+                try await local.saveArticles(fetched)
                 return fetched
             }
-        } catch {
-            print("Failed to load from local database: \(error)")
-            return []
-        }
-    }
+
+        
+    } //;
 }

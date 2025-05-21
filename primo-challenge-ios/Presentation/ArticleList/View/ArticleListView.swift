@@ -23,7 +23,7 @@ struct ArticleListView: View {
                 EmptyView()
             case .loading:
                 ArticleCardSkeletonView()
-            case .success(let t):
+            case .success(_):
                 VStack {
                     //: Header
                     HStack {
@@ -56,9 +56,16 @@ struct ArticleListView: View {
                     .listStyle(.plain)
                     .background(Color(UIColor.systemGray6)) // light grey background
                 }
-            default:
-                EmptyView()
+            case .failed(let error):
+                VStack {
+                    Text(error.localizedDescription)
+                    Button("Reload") {
+                        viewModel.loadArticles()
+                    }
+                    .buttonStyle(CapsuleButtonStyle(backgroundColor: .green))
+                }
             }
+            
         } //: Navigation Stack
         .onAppear {
             viewModel.loadArticles()

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ArticleFeedService {
-    func fetchArticles() async -> [Article]
+    func fetchArticles() async throws -> [Article]
 }
 final class ArticleFeedServiceImpl: NSObject, XMLParserDelegate, ArticleFeedService {
     private var currentElement = ""
@@ -23,21 +23,19 @@ final class ArticleFeedServiceImpl: NSObject, XMLParserDelegate, ArticleFeedServ
     private var articles: [Article] = []
     private var isInsideItem = false
     
-    func fetchArticles() async -> [Article] {
+    func fetchArticles() async throws -> [Article] {
         // MARK: Implement XML parsing from https://medium.com/feed/@primoapp
         
-        guard let url = URL(string: "https://medium.com/feed/@primoapp") else { return []}
-        
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let parser = XMLParser(data: data)
-            parser.delegate = self
-            parser.parse()
-            return articles
-        } catch {
-            print("Failed to fetch or parse articles:", error)
-            return []
+        guard let url = URL(string: "https://medium.com/feed/@primoapp") else {
+            throw URLError(.badURL)
         }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let parser = XMLParser(data: data)
+        parser.delegate = self
+        parser.parse()
+        return articles
     }
     
     // MARK: XMLParserDelegate

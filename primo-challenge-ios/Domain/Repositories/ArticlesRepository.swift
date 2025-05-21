@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ArticlesRepository {
-    func fetchArticles() async -> [Article]
+    func fetchArticles() async throws -> [Article]
 }
