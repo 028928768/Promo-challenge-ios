@@ -15,7 +15,7 @@ referenced from: https://github.com/kudoleh/iOS-Clean-Architecture-MVVM
 
 | Home Screen | Article Detail |
 |-------------|----------------|
-| ![Home](screenshots/home.png) | ![Detail](screenshots/detail.png) |
+| <img src="primo-challenge-ios/Resources/ScreenShots/Simulator Screenshot - Feeds.png" alt="App Feed" width="400"/> | <img src="primo-challenge-ios/Resources/ScreenShots/Simulator Screenshot - Details.png" alt="App Detail" width="400"/> |
 
 ## 🛠 Tech Stack
 - Swift 5.9
@@ -32,5 +32,5 @@ This project includes:
 
 ## 📦 Installation
 ```bash
-git clone https://github.com/yourusername/PrimoChallengeApp.git
-open PrimoChallengeApp.xcodeproj
+git clone https://github.com/028928768/Promo-challenge-ios
+open primo-challenge-ios.xcodeproj
