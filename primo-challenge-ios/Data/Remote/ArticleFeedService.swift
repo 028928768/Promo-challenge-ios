@@ -23,23 +23,43 @@ final class ArticleFeedServiceImpl: NSObject, XMLParserDelegate, ArticleFeedServ
     private var articles: [Article] = []
     private var isInsideItem = false
     
+    // MARK: - for mocking and dependencies injection (urlSession) in Tests
+    private let feedURL: URL?
+    private let session: NetworkSession
+    private(set) var parseError: Error?
+    
+    init(feedURL: URL? = URL(string: "https://medium.com/feed/@primoapp"), session: NetworkSession = URLSession.shared) {
+        self.feedURL = feedURL
+        self.session = session
+    }
+    
     func fetchArticles() async throws -> [Article] {
         // MARK: Implement XML parsing from https://medium.com/feed/@primoapp
         
-        guard let url = URL(string: "https://medium.com/feed/@primoapp") else {
+        guard let url = feedURL else {
             throw URLError(.badURL)
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await session.data(from: url)
         
         let parser = XMLParser(data: data)
         parser.delegate = self
-        parser.parse()
+        let success = parser.parse()
+        
+        // check if parsing is error since by default if failed it doesn't throw anything
+        if !success || parseError != nil {
+            throw parseError ?? NSError(domain: "XMLParsing", code: -1, userInfo: nil)
+        }
         return articles
     }
     
     // MARK: XMLParserDelegate
     
+    // Using XML parse delegate method to throw error for Tests
+    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        self.parseError = parseError
+    }
+
     func parser(_ parser: XMLParser, didStartElement elementName: String,
                 namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         currentElement = elementName
@@ -112,6 +132,11 @@ final class ArticleFeedServiceImpl: NSObject, XMLParserDelegate, ArticleFeedServ
             guard let range = Range($0.range(at: 1), in: html) else { return nil }
             return String(html[range])
         }
+    }
+    
+    // For internal testing -> so it can access private articles
+    func getParsedArticles() -> [Article] {
+        return articles
     }
 
 }

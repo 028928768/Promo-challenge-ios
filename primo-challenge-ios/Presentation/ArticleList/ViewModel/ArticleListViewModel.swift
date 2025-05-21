@@ -11,10 +11,13 @@ final class ArticleListViewModel: ObservableObject {
     @Published var articles: [Article] = []
     @Published var selectedArticle: Article?
     @Published var state: ViewState<[Article]> = .idle
+
+    private let useCase: FetchArticlesUseCase
     
-    private let useCase: FetchArticlesUseCase = FetchArticlesUseCaseImpl(
-        repository: ArticlesRepositoryImpl(remote: ArticleFeedServiceImpl(), local: ArticleCoreDataServiceImpl())
-    )
+    init(useCase: FetchArticlesUseCase? = nil) {
+        self.useCase = useCase ?? FetchArticlesUseCaseImpl(
+            repository: ArticlesRepositoryImpl(remote: ArticleFeedServiceImpl(), local: ArticleCoreDataServiceImpl()))
+    }
     
     func loadArticles() {
         state = .loading
