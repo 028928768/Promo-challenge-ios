@@ -34,6 +34,8 @@
 		2BD7BDF02DDDD5F100A9F021 /* ArticleListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDEF2DDDD5F000A9F021 /* ArticleListViewModelTests.swift */; };
 		2BD7BDF22DDDDAAD00A9F021 /* ArticleCoreDataServiceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDF12DDDDAAD00A9F021 /* ArticleCoreDataServiceImplTests.swift */; };
 		2BD7BDF32DDDE03000A9F021 /* ArticlesDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7BDD22DDCAA3400A9F021 /* ArticlesDatabase.xcdatamodeld */; };
+		2BD7BDF62DDE17BD00A9F021 /* Simulator Screenshot - Feeds.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD7BDF52DDE17BD00A9F021 /* Simulator Screenshot - Feeds.png */; };
+		2BD7BDF82DDE17E600A9F021 /* Simulator Screenshot - Details.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD7BDF72DDE17E600A9F021 /* Simulator Screenshot - Details.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		2BD7BDED2DDDC66E00A9F021 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		2BD7BDEF2DDDD5F000A9F021 /* ArticleListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelTests.swift; sourceTree = "<group>"; };
 		2BD7BDF12DDDDAAD00A9F021 /* ArticleCoreDataServiceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCoreDataServiceImplTests.swift; sourceTree = "<group>"; };
+		2BD7BDF52DDE17BD00A9F021 /* Simulator Screenshot - Feeds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Feeds.png"; sourceTree = "<group>"; };
+		2BD7BDF72DDE17E600A9F021 /* Simulator Screenshot - Details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Details.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		2BD7BDB02DDC6B6800A9F021 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2BD7BDF42DDE17A500A9F021 /* ScreenShots */,
 				2BD7BD862DDC649400A9F021 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -311,6 +316,15 @@
 				2BD7BDE72DDD77CB00A9F021 /* CapesuleButtonStyle.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2BD7BDF42DDE17A500A9F021 /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				2BD7BDF52DDE17BD00A9F021 /* Simulator Screenshot - Feeds.png */,
+				2BD7BDF72DDE17E600A9F021 /* Simulator Screenshot - Details.png */,
+			);
+			path = ScreenShots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,8 +431,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD7BDF82DDE17E600A9F021 /* Simulator Screenshot - Details.png in Resources */,
 				2BD7BD8A2DDC649400A9F021 /* Preview Assets.xcassets in Resources */,
 				2BD7BD872DDC649400A9F021 /* Assets.xcassets in Resources */,
+				2BD7BDF62DDE17BD00A9F021 /* Simulator Screenshot - Feeds.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +647,8 @@
 				DEVELOPMENT_TEAM = 8A8VNC6KC9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Primo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -660,6 +678,8 @@
 				DEVELOPMENT_TEAM = 8A8VNC6KC9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Primo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
