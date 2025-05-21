@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Identifiable, Equatable {
+struct Article: Identifiable, Equatable, Hashable {
     let id: String
     let title: String
     let description: String
@@ -47,4 +47,24 @@ extension Article {
             imageUrls: imageUrls
         )
     }
+    
+    static let mockArticle1 = Article(
+        id: "11111111-1111-1111-1111-111111111111",
+        title: "Mock Article One",
+        description: "Description for mock article one.",
+        content: "Content for mock article one.",
+        publishedDate: Date(timeIntervalSince1970: 1_000_000),
+        categories: ["News", "Tech"],
+        imageUrls: ["https://example.com/image1.jpg"]
+    )
+    
+    static let mockArticle2 = Article(
+        id: "22222222-2222-2222-2222-222222222222",
+        title: "Mock Article Two",
+        description: "Description for mock article two.",
+        content: "Content for mock article two.",
+        publishedDate: Date(timeIntervalSince1970: 2_000_000),
+        categories: ["Sports"],
+        imageUrls: ["https://example.com/image2.jpg"]
+    )
 }

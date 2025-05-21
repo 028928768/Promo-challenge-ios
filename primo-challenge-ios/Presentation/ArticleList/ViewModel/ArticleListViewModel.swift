@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class ArticleListViewModel: ObservableObject {
     @Published var articles: [Article] = []
     @Published var selectedArticle: Article?
@@ -19,20 +20,16 @@ final class ArticleListViewModel: ObservableObject {
             repository: ArticlesRepositoryImpl(remote: ArticleFeedServiceImpl(), local: ArticleCoreDataServiceImpl()))
     }
     
-    func loadArticles() {
+    func loadArticles() async {
         state = .loading
-        Task {
-            let result = await useCase.execute()
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let articles):
-                    self.articles = articles
-                    self.state = .success(self.articles)
-                case .failure(let error):
-                    self.state = .failed(error)
-                }
-                
-            }
+        
+        let result = await useCase.execute()
+        switch result {
+        case .success(let success):
+            self.articles = success
+            self.state = .success(articles)
+        case .failure(let error):
+            self.state = .failed(error)
         }
     }
 }

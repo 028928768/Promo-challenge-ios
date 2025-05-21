@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ArticleListView: View {
-    @StateObject private var viewModel = ArticleListViewModel()
+    @StateObject private var viewModel: ArticleListViewModel
     
     // MARK: Previews
-    init(viewModel: ArticleListViewModel = ArticleListViewModel()) {
-       _viewModel = StateObject(wrappedValue: viewModel)
+    @MainActor
+    init(viewModel: ArticleListViewModel? = nil) {
+        if let vm = viewModel {
+            _viewModel = StateObject(wrappedValue: vm)
+        } else {
+            _viewModel = StateObject(wrappedValue: ArticleListViewModel())
+        }
     }
     
     var body: some View {
@@ -60,7 +65,9 @@ struct ArticleListView: View {
                 VStack {
                     Text(error.localizedDescription)
                     Button("Reload") {
-                        viewModel.loadArticles()
+                        Task {
+                            await viewModel.loadArticles()
+                        }
                     }
                     .buttonStyle(CapsuleButtonStyle(backgroundColor: .green))
                 }
@@ -68,7 +75,9 @@ struct ArticleListView: View {
             
         } //: Navigation Stack
         .onAppear {
-            viewModel.loadArticles()
+            Task {
+                await viewModel.loadArticles()
+            }
         }
 
     }

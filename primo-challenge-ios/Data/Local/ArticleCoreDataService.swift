@@ -17,21 +17,29 @@ final class ArticleCoreDataServiceImpl: ArticleCoreDataService {
     private let container: NSPersistentContainer
     private let context: NSManagedObjectContext
     
-    init() {
-        container = NSPersistentContainer(name: "ArticlesDataModel")
-        container.loadPersistentStores(completionHandler: { _, error in
-            if let error = error {
-                fatalError("Core Data failed to load: \(error.localizedDescription)")
+    init(container: NSPersistentContainer? = nil) {
+        if let container = container {
+            // Test or dependency-injected container – assume it's already loaded
+            self.container = container
+        } else {
+            // No container provided – create and load the default one
+            self.container = NSPersistentContainer(name: "ArticlesDatabase")
+            self.container.loadPersistentStores { _, error in
+                if let error = error {
+                    fatalError("Core Data failed to load: \(error.localizedDescription)")
+                }
             }
-        })
-        context = container.viewContext
+        }
+        self.context = self.container.viewContext
     }
-    
+
     func saveArticles(_ articles: [Article]) async throws {
         // removed existing articles first
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = ArticleEntity.fetchRequest()
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        try context.execute(deleteRequest)
+        let fetchRequest: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
+        let existingArticles = try context.fetch(fetchRequest)
+        for article in existingArticles {
+            context.delete(article)
+        }
         
         // save new articles
         for article in articles {
